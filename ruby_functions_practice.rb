@@ -43,6 +43,20 @@ def number_to_full_month_name (number)
   end
 end
 
+# #OTHER WAY:
+# def number_to_full_month_name (number)
+#   number = "not a month"
+#   case number
+#   when 1
+#   month="January"
+#   when 3
+#   month="March"
+#   when 9
+#   month="September"
+#   end
+#
+#   return month
+# end
 
 def number_to_short_month_name (number)
   case number
@@ -55,19 +69,23 @@ def number_to_short_month_name (number)
   end
 end
 
+# #OTHER WAY OF DOING IT:
+# def number_to_short_month_name (number)
+#   full_month_name = number_to_full_month_name(number)
+#   short_month_name = full_month_name.slice(0,3) #we start as position 0 and want to return 3 characters from the start
 
 def volume_of_cube(side)
-  volume = side * side * side
+  volume = side ** 3
   return volume
 end
 
 def volume_of_sphere(radius)
-  volume = Math::PI * radius**3 * 4/3
+  volume = (Math::PI * radius**3 * 4.0/3).round() #we need to use either 4.0/3 or 4/3.0 to get decimals from ruby.
   return volume
 end
 
 
 def fahrenheit_to_celsius(fahr)
-   result = (fahr - 32) * 5.0/9
+   result = ((fahr - 32) * 5.0/9).round()
    return result
 end

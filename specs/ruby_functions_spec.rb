@@ -2,9 +2,9 @@ require( 'minitest/autorun' )
 require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
-require_relative( '../ruby_functions_practice' )
+require_relative( '../ruby_functions_practice' ) #this is the file where the function definitions are located
 
-class FunctionsTest < MiniTest::Test
+class FunctionsTest < MiniTest::Test #class statement that finishes on line 106
 
   def test_return_10()
     return_10_result = return_10()
@@ -49,8 +49,8 @@ class FunctionsTest < MiniTest::Test
     assert_equal( 3, add_result )
   end
 
-  def test_number_to_full_name__month_1()
-    result = number_to_full_month_name( 1 )
+  def test_number_to_full_name__month_1() #this is just the name of the test, it can be anything.
+    result = number_to_full_month_name( 1 ) #here is the name of the function that needs to be used in the function defition
     assert_equal( "January", result )
   end
 
@@ -91,14 +91,14 @@ class FunctionsTest < MiniTest::Test
   #Given the radius of a sphere calculate the volume
   def test_volume_of_sphere()
     #add test code here
-    volume=volume_of_sphere(3).round()
+    volume=volume_of_sphere(3)
     assert_equal(113,volume)
   end
 
   #Given a value in farenheit, convert this into celsius.
   def test_fahrenheit_to_celsius()
     #add test code here
-    celsius = fahrenheit_to_celsius(89).round()
+    celsius = fahrenheit_to_celsius(89)
     assert_equal(32,celsius)
   end
 
